@@ -21,10 +21,10 @@ variable "merge_requests_disable_committers_approval" {
   description = "Set to true to disable merge request committers from approving their own merge requests"
 }
 
-variable "require_password_to_approve" {
+variable "require_reauthentication_to_approve" {
   type        = bool
   default     = false
-  description = "Set to true to require authentication to approve merge requests"
+  description = "If true, requires approver to reauthenticate before adding the approval"
 }
 
 variable "reset_approvals_on_push" {
@@ -36,5 +36,5 @@ variable "reset_approvals_on_push" {
 variable "selective_code_owner_removals" {
   type        = bool
   default     = false
-  description = "Reset approvals from Code Owners if their files changed"
+  description = "Reset approvals from Code Owners if their files changed. Can be enabled only if reset_approvals_on_push is disabled"
 }
